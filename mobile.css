@@ -1,0 +1,581 @@
+/* ============================================
+   Updated styles.css for Kubu Website
+   ============================================ */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* CSS Variables */
+  :root {
+    --main-color: #000000;
+    --hover-color: rgb(0, 0, 0);
+    --text-color: rgb(255, 255, 255);
+    --accent-color: #b4710d;
+  }
+  
+  /* Body */
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* ============================
+     Header & Navigation
+     ============================ */
+  header {
+    background-color: #ffffff;
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    /* Added relative positioning to allow absolute positioning of the section indicator */
+    position: relative;
+  }
+  
+  header.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .logo img {
+    width: 50px;
+    margin-right: 10px;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+  }
+  
+  /* NEW: Section Indicator in Header (positioned top-right) */
+  header .section-indicator {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  /* Navigation */
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  nav ul li {
+    margin-left: 10px;
+    flex-shrink: 0;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--accent-color);
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  nav ul li a:hover {
+    background-color: var(--hover-color);
+    color: #fff;
+  }
+  
+  nav ul li a.active {
+    background-color: rgb(2, 158, 197);
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ============================
+     Home Section
+     ============================ */
+  #home {
+    position: relative;
+    height: 60vh;
+    text-align: center;
+    color: #fff;
+  }
+  
+  /* Adjusted main image to fit its container properly */
+  .main-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: fit-content;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  
+  
+  /* (Optional) Hide the full overlay in the home section
+     since we now show the section name in the header */
+  #home .overlay {
+    display: none;
+  }
+  
+  /* ============================
+     Section Headers
+     ============================ */
+  .section-header {
+    font-size: 1.8em;
+    margin: 20px 0;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+  }
+  
+  .underline {
+    width: 50px;
+    height: 4px;
+    background-color: var(--main-color);
+    margin: 10px auto;
+  }
+  
+  /* ============================
+     Services Section
+     ============================ */
+  #services {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .service {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 10px;
+    width: calc(33.33% - 20px);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .service img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .service h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .service p {
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .service:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ============================
+     Shop Section
+     ============================ */
+  #shop {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .shop-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .shop-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .shop-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .shop-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Carousel Arrows for Shop Items */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    padding: 0.5em;
+    cursor: pointer;
+    color: #000;
+    z-index: 1;
+  }
+  
+  .carousel-arrow.left {
+    left: 10px;
+  }
+  
+  .carousel-arrow.right {
+    right: 10px;
+  }
+  
+  /* ============================
+     Projects Section
+     ============================ */
+  #projects {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .project-display {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
+  }
+  
+  .project-display img {
+    width: 60%;
+    max-height: 500px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+    object-fit: cover;
+  }
+  
+  .project-description {
+    width: 40%;
+    text-align: left;
+  }
+  
+  .project-description h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #333;
+  }
+  
+  .project-description p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Thumbnails for Projects */
+  .thumbnail-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    overflow-x: auto;
+    padding: 0 20px;
+  }
+  
+  .thumbnail {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .thumbnail:hover {
+    transform: scale(1.1);
+  }
+  
+  /* ============================
+     Contact Section
+     ============================ */
+  #contact {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+  
+  .map-container {
+    flex: 0 0 70%;
+    height: calc(100vh - 200px);
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .contact-form {
+    flex: 0 0 30%;
+    padding: 40px;
+    background: linear-gradient(to top, rgb(2, 106, 175), #faa301);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    margin-left: 20px;
+  }
+  
+  .contact-form h3 {
+    color: #000;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #fff;
+  }
+  
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    background: #fff;
+    color: #000;
+  }
+  
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .contact-form button {
+    background: linear-gradient(to top, #010202, rgb(4, 93, 211));
+    color: rgb(253, 253, 253);
+    border: none;
+    padding: 14px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  
+  .contact-form button:hover {
+    background: linear-gradient(to top, #fac002, rgb(255, 255, 255));
+    color: #000;
+  }
+  
+  .contact-form .office-hours,
+  .contact-form .office-number {
+    color: #fff;
+    font-size: 1.2em;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  /* ============================
+     Footer
+     ============================ */
+  footer {
+    background: linear-gradient(to right, #000, rgb(5, 82, 184));
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+  }
+  
+  .footer-top {
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .footer-country {
+    color: #fff;
+  }
+  
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .footer-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .footer-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .footer-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .footer-text {
+    font-size: 16px;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ============================================
+     Responsive Adjustments
+     ============================================ */
+  @media screen and (max-width: 900px) {
+    /* Services Section: stack items */
+    .services-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .service {
+      width: 100%;
+      max-width: 400px;
+    }
+    /* Projects: stack main image and description */
+    .project-display {
+      flex-direction: column;
+    }
+    .project-description {
+      width: 100%;
+      text-align: center;
+      padding: 0 20px;
+    }
+    /* Contact Section: stack map and form */
+    .contact-container {
+      flex-direction: column;
+    }
+    .map-container {
+      width: 100%;
+      height: 350px;
+    }
+    .contact-form {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    header h1 {
+      font-size: 20px;
+    }
+    nav ul li a {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+    .section-header {
+      font-size: 1.5em;
+    }
+    .underline {
+      margin: 10px auto;
+    }
+    .service h3,
+    .service p {
+      font-size: 14px;
+    }
+    .shop-item {
+      padding: 10px;
+    }
+    .project-description h3 {
+      font-size: 20px;
+    }
+    .project-description p {
+      font-size: 14px;
+    }
+    .contact-form h3 {
+      font-size: 20px;
+    }
+    .thumbnail {
+      width: 80px;
+      height: 56px;
+    }
+  }
+  

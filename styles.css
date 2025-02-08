@@ -1,0 +1,688 @@
+/* General reset to remove margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables for Colors */
+:root {
+    --main-color: #000000;
+    --hover-color: rgb(0, 0, 0);
+    --text-color: rgb(255, 255, 255);
+}
+
+/* Font styling for a professional look */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header styling */
+header {
+    background-color: #ffffff; /* Initial background color - dark green */
+    transition: background-color 0.3s ease; /* Smooth transition for color changes */
+    color: var(--text-color); /* Ensure you have defined --text-color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrolled header style */
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.9); /* Dark green with less transparency */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+@media screen and (max-width: 900px) {
+    header .section-indicator {
+      display: none;
+    }
+  }
+  
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+/* General styling for nav links */
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    background-color: rgb(180, 113, 13);
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    white-space: nowrap;
+}
+
+/* Hover effect for nav links */
+nav ul li a:hover {
+    background-color: var(--hover-color);
+    color: white; /* Optional: change text color on hover */
+}
+
+/* Active section highlighting */
+nav ul li a.active {
+    background-color: rgb(2, 158, 197); /* Highlight active link */
+    color: black; /* Text color for active link */
+    font-weight: bold; /* Optional: make the text bold */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: slight shadow for active link */
+}
+
+/* For PC and devices wider than 480px */
+@media screen and (min-width: 481px) {
+    #home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 60vh; /* or your preferred height */
+      overflow: hidden;
+    }
+  
+    .main-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+  
+.overlay {
+    position: absolute;
+    top: 20%; /* Position the text 20% from the top */
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    font-family: 'Anso On', sans-serif; /* Ensure this font is included in your HTML */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: Add a shadow for better visibility */
+}
+
+#services {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.underline {
+    height: 4px;
+    background-color: var(--main-color);
+    width: 50px;
+    margin: 10px auto;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.service {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 10px;
+    width: calc(30% - 20px);
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s; /* Transition for pop effect */
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: Add rounded corners to images */
+}
+
+.service:hover {
+    transform: scale(1.05); /* Pop effect on hover */
+}
+
+/* About section */
+.about-section {
+    position: relative; /* Allow for absolute positioning of content */
+    background: url('aboutPhoto.jpg') no-repeat center center / cover;
+    padding: 60px 20px; /* Adjust the padding as needed */
+    height: 80vh; /* Same height as truck image */
+
+}
+
+.section-header {
+    position: relative; /* Positioning context for the pseudo-element */
+    z-index: 1; /* Ensure the text is above the oval */
+    margin-bottom: 20px; /* Space below the header */
+    color: black; /* Change text color to black for contrast */
+    font-weight: bold; /* Make the text bold */
+    font-size: 24px; /* Increase font size */
+    padding: 10px 20px; /* Add padding for the header text */
+    display: inline-block; /* Allow padding to affect size */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Optional shadow for better visibility */
+    min-width: 200px; /* Set a minimum width for consistency */
+    text-align: center; /* Center the text within the pill */
+}
+
+.section-header::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position the pill relative to the header */
+    left: 50%; /* Center the pill horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Center the pill */
+    width: calc(80% + 40px); /* Add extra width for the pill to extend beyond the text */
+    height: 120%; /* Slightly taller than the text */
+    background: linear-gradient(45deg, #ff9a02, #05a3ff); /* Gradient background like the buttons */
+    border-radius: 50px; /* Make it pill-shaped */
+    z-index: 0; /* Send the pill behind the text */
+    opacity: 0.8; /* Optional: make it slightly transparent to enhance text visibility */
+}
+
+/* Optional: To ensure the text is fully visible */
+.section-header:hover::before {
+    opacity: 0.9; /* Darken the pill on hover for better visibility */
+}
+
+
+
+.about-content {
+    position: absolute; /* Position the text box over the photo */
+    left: 0; /* Remove margin from the left */
+    top: 0; /* Start from the top */
+    height: 120%; /* Stretch to full height */
+    max-width: 400px; /* Limit the width of the text box */
+    background: rgba(255, 255, 255, 0.8); /* White transparent background */
+    padding: 20px; /* Add padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    color: black; /* Change text color to black */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+}
+
+.about-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px; /* Space between heading and text */
+    border-bottom: 3px solid darkgreen; /* Dark green underline */
+}
+
+.about-content p {
+    font-size: 1.2em; /* Adjust font size as needed */
+}
+
+/* Projects section */
+#projects {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 1.8em;
+    margin: 20px 0;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* New section for main project display */
+.project-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px; /* Increase width for better layout */
+    margin: auto;
+    gap: 30px;
+}
+
+.project-display img {
+    width: 60%;
+    height: auto;
+    max-height: 500px; /* Adjust for consistency */
+    border-radius: 10px;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+/* Description section next to the image */
+.project-description {
+    width: 40%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-description h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.project-description p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Existing styles */
+.project {
+    background-color: var(--main-color); /* Dark green background */
+    color: var(--text-color);
+    padding: 15px; /* Padding around project content */
+    border-radius: 10px; /* Rounded corners for the project box */
+    width: calc(33% - 20px); /* Adjust width for 3 items per row, with margin */
+    margin: 10px; /* Space between photos */
+    text-align: center; /* Center the text */
+    transition: transform 0.3s; /* Transition for pop effect */
+}
+
+.project img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    max-height: 350px; /* Set a max height for uniformity */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+}
+
+.project:hover {
+    transform: scale(1.05); /* Pop effect on hover */
+}
+
+/* Main Project Image */
+.project-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.main-project img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Thumbnail container */
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+
+/* Media query for responsive behavior */
+@media screen and (max-width: 768px) {
+    .project {
+        width: calc(50% - 20px); /* Adjust width for 2 items per row on smaller screens */
+    }
+}
+
+
+
+/* Contact Section Styling */
+#contact {
+    padding: 60px 20px; /* Adjust padding if necessary */
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 1.5em; /* Make the text larger */
+    color: black; /* Change text color to black */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+#contact .underline {
+    height: 4px;
+    background-color: var(--main-color);
+    width: 50px;
+    margin: 10px auto;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure both map and form take up full height */
+    width: 100%; /* Full width */
+    margin: 0;
+    padding: 0;
+}
+
+.map-container {
+    flex: 0 0 70%; /* Set flexible width for the map (70%) */
+    height: calc(100vh - 200px); /* Set height to fill the screen minus other elements */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* No border for a seamless look */
+}
+
+.contact-form {
+    flex: 0 0 30%;
+    padding: 40px;
+    background: linear-gradient(to top, rgb(2, 106, 175), #faa301); /* Lime green gradient to dark green with glass effect */
+    backdrop-filter: blur(10px); /* Apply blur for the glass effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    margin-left: 20px;
+    border-radius: 10px; /* Add rounded corners to enhance the glass effect */
+}
+
+
+.contact-form h3 {
+    color: rgb(0, 0, 0);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    color: white;
+    font-size: 1em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to top, white, white); /* Gradient from dark green to white */
+    color: white;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form button {
+    background: linear-gradient(to top, #010202, rgb(4, 93, 211)); /* Same gradient as the input fields */
+    color: rgb(253, 253, 253);
+    border: none;
+    padding: 14px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(to top, #fac002, rgb(255, 255, 255)); /* Keep the gradient on hover */
+    color: black;
+}
+
+.contact-form .office-hours,
+.contact-form .office-number {
+    color: rgb(255, 255, 255); /* Matches the text color */
+    font-size: 1.2em; /* Adjust font size as necessary */
+    margin-top: 5px; /* Space above the office number */
+    text-align: center;
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        height: auto; /* Allow for flexible height in smaller screens */
+    }
+
+    .map-container {
+        width: 100%; /* Full width for the map */
+        height: 350px; /* Set a height for the map */
+    }
+
+    .contact-form {
+        margin-left: 0; /* Remove left margin on smaller screens */
+        margin-top: 20px; /* Space above the form */
+    }
+}
+/* Shop Page Styles */
+/* Shop Page Styles */
+#shop {
+    padding: 50px 20px; /* Add padding around the section */
+    text-align: center; /* Center the text */
+}
+
+h2 {
+    font-size: 2em; /* Header font size */
+    margin-bottom: 20px; /* Spacing below the header */
+}
+
+.shop-container {
+    display: grid; /* Use grid layout for items */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between items */
+  }
+  
+  /* Force all shop images to a fixed size */
+  .shop-container img {
+    width: 100%;
+    height: 300px;       /* Fixed height */
+    object-fit: cover;   /* Crop the image to fill the area without distortion */
+    display: block;      /* Prevent extra space below images */
+  }
+  
+  /* Shop item container ensures any overflow is hidden */
+  .shop-item {
+    background-color: #f9f9f9; /* Light background for items */
+    border: 1px solid #ddd;    /* Border for items */
+    border-radius: 8px;        /* Rounded corners */
+    padding: 20px;             /* Inner padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: transform 0.2s; /* Smooth scaling on hover */
+    position: relative;        /* Position relative for carousel arrows */
+    overflow: hidden;          /* Hide any overflow from larger images */
+  }
+  
+  .shop-item:hover {
+    transform: scale(1.05);    /* Scale up on hover */
+  }
+  
+
+.carousel {
+    position: relative;
+    overflow: hidden; /* Hide overflow to maintain layout */
+}
+
+.carousel img {
+    width: 100%; /* Full width of the item */
+    height: 300px; /* Fixed height for consistent sizing */
+    object-fit: cover; /* Crop to fit fixed height and width */
+    display: none; /* Hide all images initially */
+}
+
+.carousel img:first-child {
+    display: block; /* Show the first image by default */
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-58%);
+    background-color: rgba(0, 0, 0, 0.6); /* Dark, semi-transparent background */
+    color: #fff;                     /* White arrow color for contrast */
+    border: none;
+    font-size: 2em;                  /* Increase arrow size */
+    padding: 0.2em;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 40%;              /* Makes the button circular */
+    transition: background-color 0.3s ease;
+}
+
+.carousel-arrow.left {
+    left: 10px;
+}
+
+.carousel-arrow.right {
+    right: 10px;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(12, 178, 255, 0.8); /* Darker on hover */
+}
+
+
+.shop-item h3 {
+    font-size: 1.5em; /* Font size for item name */
+    margin: 10px 0; /* Spacing around item name */
+}
+
+.shop-item p {
+    font-size: 1em; /* Font size for dimensions */
+    color: #666; /* Grey color for text */
+}
+
+
+footer {
+    background: linear-gradient(to right, #000000, rgb(5, 82, 184)); /* Example header gradient */
+    color: rgb(255, 255, 255); /* White text */
+    font-family: 'Mbledos Display', sans-serif; /* Apply Mbledos Display font */
+    padding: 10px 10px;
+}
+
+.footer-top {
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-country {
+    color: rgb(255, 255, 255);
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.footer-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.footer-text {
+    font-size: 16px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+@media screen and (max-width: 480px) {
+    nav ul {
+      display: none !important;
+    }
+  }
+  
