@@ -311,38 +311,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // EmailJS form submission handling
-  emailjs.init("SxH6Bi3FPlFrT6Vbu");
-  const contactForm = document.getElementById("contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-      emailjs.sendForm("service_service_0macxyn", "template_jqrv3n2", this)
-        .then(function (response) {
-          console.log("SUCCESS!", response);
-          alert("Your message has been sent successfully!");
-        }, function (error) {
-          console.log("FAILED...", error);
-          alert("Oops! Something went wrong.");
-        });
-    });
-  }
+ emailjs.init("SxH6Bi3FPlFrT6Vbu");
 
-  // Prevent project photo links from jumping to the top and add CSS effect on click
-  const projectLinks = document.querySelectorAll("figure.snip1206 a");
-  projectLinks.forEach(link => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      // Remove 'hover' from all project links if needed
-      projectLinks.forEach(l => l.classList.remove("hover"));
-      // Add the 'hover' class to trigger your CSS effect
-      this.classList.add("hover");
-      // Optionally, remove the effect after 1 second
-      setTimeout(() => {
-        this.classList.remove("hover");
-      }, 1000);
-    });
-  });
-});
+    const contactForm = document.getElementById("contact-form");
+    const submitBtn = document.getElementById("submit-btn");
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending...";
+
+        emailjs.sendForm("service_0macxyn", "template_jqrv3n2", this)
+          .then(function (response) {
+            console.log("SUCCESS!", response);
+            alert("Your message has been sent successfully!");
+            contactForm.reset();
+          })
+          .catch(function (error) {
+            console.log("FAILED...", error);
+            alert("Oops! Something went wrong.");
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Send Message";
+          });
+      });
 
 </script>
 </body>
